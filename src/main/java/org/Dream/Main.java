@@ -11,11 +11,17 @@ public class Main {
 
         // Start Spring Boot application
         ApplicationContext context =
-                SpringApplication.run(Main.class, args);
+                SpringApplication.run(Main.class);
 
         // Ask Spring IOC container for the bean
-        Demo demo = context.getBean(Demo.class);
-        demo.output();
+        Alien alien = context.getBean(Alien.class);
+        alien.output();
+        Alien alien1=context.getBean(Alien.class);
+
+        alien1.output();
+
+        System.out.println("compare " +alien.equals(alien1)); // both referring to the same object creating difference refernaces
+
     }
 }
 
@@ -34,7 +40,7 @@ public class Main {
 //
 //        // manually created object using new keyword
 //
-//        Demo d=new Demo();
+//        Alien d=new Alien();
 //        d.output();
 //
 //        // but i don;t want to create manually this object , i want spring create object by itself using spring ioc conatianer
