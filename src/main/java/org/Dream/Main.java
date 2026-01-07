@@ -12,5 +12,10 @@ public class Main {
       * and any object and lifecycle of that object handle by spring is know as Bean
       * */
         System.out.println("hello world");
+
+        // manually created object using new keyword
+
+        Demo d=new Demo();
+        d.output();
         }
     }
