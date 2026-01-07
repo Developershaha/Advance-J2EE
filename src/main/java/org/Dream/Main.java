@@ -16,11 +16,11 @@ public class Main {
         // Ask Spring IOC container for the bean
         Alien alien = context.getBean(Alien.class);
         alien.output();
-        Alien alien1=context.getBean(Alien.class);
-
-        alien1.output();
-
-        System.out.println("compare " +alien.equals(alien1)); // both referring to the same object creating difference refernaces
+//        Alien alien1=context.getBean(Alien.class);
+//
+//        alien1.output();
+//
+//        System.out.println("compare " +alien.equals(alien1)); // both referring to the same object creating difference refernaces
 
     }
 }
