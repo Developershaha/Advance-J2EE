@@ -1,5 +1,8 @@
 package org.Dream;
 
+import org.Dream.model.Alien;
+import org.Dream.model.Laptop;
+import org.Dream.service.LaptopService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,10 +15,13 @@ public class Main {
         // Start Spring Boot application
         ApplicationContext context =
                 SpringApplication.run(Main.class);
+        LaptopService service =(LaptopService) context.getBean(LaptopService.class);
+        Laptop lop=context.getBean(Laptop.class);
+        service.addLaptop(lop);
 
         // Ask Spring IOC container for the bean
-        Alien alien = context.getBean(Alien.class);
-        alien.output();
+        // Alien alien = context.getBean(Alien.class);
+      //   alien.output();
 //        Alien alien1=context.getBean(Alien.class);
 //
 //        alien1.output();
